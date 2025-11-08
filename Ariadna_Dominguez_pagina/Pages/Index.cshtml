@@ -1,0 +1,93 @@
+﻿@page
+@model Ariadna_Dominguez_pagina.Pages.IndexModel
+@{
+    ViewData["Title"] = "Kairos";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            background: linear-gradient(135deg, #1e3c72, #8e0e00);
+        }
+
+        .contenedor {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            max-width: 500px;
+            margin: 80px auto;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #00bfa5;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #009e88;
+        }
+
+        label {
+            margin-top: 15px;
+            display: block;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Kairos</h1>
+        <h2>Regístrate con nosotros:</h2>
+
+        <form method="post">
+
+            <label>Nombres</label>
+            <input type="text" asp-for="nombre" placeholder="Ingresa tu nombre" />
+
+            <label>Apellidos</label>
+            <input type="text" asp-for="apellido" placeholder="Ingresa tus apellidos" />
+
+            <label>Correo</label>
+            <input type="email" asp-for="correo" placeholder="Ingresa tu email" />
+
+            <label>Número</label>
+            <input type="text" asp-for="numero" placeholder="Ingresa tu número" />
+
+            <br /><br />
+            <button type="submit">Registrarte</button>
+        </form>
+
+        @if (!string.IsNullOrEmpty(Model.mensaje))
+        {
+            <p>@Model.mensaje</p>
+        }
+    </div>
+</body>
+</html>
