@@ -63,7 +63,7 @@
 </head>
 <body>
     <div class="contenedor">
-        <h1>Kairos</h1>
+        <h1>Formulario 1</h1>
         <h2>Regístrate con nosotros:</h2>
 
         <form method="post">
@@ -73,6 +73,13 @@
 
             <label>Apellidos</label>
             <input type="text" asp-for="apellido" placeholder="Ingresa tus apellidos" />
+
+            <label for="genero">genero</label>
+            <select id="genero" name="genero">
+                <option value="Femenino">Femenino</option>
+                <option value="Masculino">Masculino</option>
+                <option value="No binario">No binario</option>
+            </select>
 
             <label>Correo</label>
             <input type="email" asp-for="correo" placeholder="Ingresa tu email" />
